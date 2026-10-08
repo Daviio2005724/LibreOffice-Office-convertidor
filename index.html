@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Office Converter</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+
+    <main class="container">
+
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">↗</span>
+                <span>Office Converter</span>
+            </div>
+
+            <p>
+                Convierte archivos de LibreOffice a Microsoft Office
+            </p>
+        </header>
+
+
+        <section class="converter-card">
+
+            <div class="drop-zone" id="dropZone">
+
+                <div class="upload-icon">
+                    ↑
+                </div>
+
+                <h2>Arrastra tu archivo aquí</h2>
+
+                <p>o selecciona un archivo desde tu computadora</p>
+
+                <label for="fileInput" class="select-button">
+                    Seleccionar archivo
+                </label>
+
+                <input type="file" id="fileInput" accept=".odt,.ods,.odp" hidden>
+
+                <small>
+                    Formatos compatibles: ODT, ODS y ODP
+                </small>
+
+            </div>
+
+
+            <div class="file-info" id="fileInfo" hidden>
+
+                <div class="file-icon" id="fileIcon">
+                    📄
+                </div>
+
+                <div class="file-details">
+                    <h3 id="fileName">
+                        archivo.odt
+                    </h3>
+
+                    <p id="fileSize">
+                        0 KB
+                    </p>
+                </div>
+
+                <button class="remove-button" id="removeButton" type="button">
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="conversion" id="conversion" hidden>
+
+                <div class="format">
+
+                    <span class="format-label">
+                        Formato original
+                    </span>
+
+                    <div class="format-box">
+                        <strong id="inputFormat">
+                            ODT
+                        </strong>
+
+                        <span id="inputName">
+                            Writer
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="arrow">
+                    →
+                </div>
+
+
+                <div class="format">
+
+                    <span class="format-label">
+                        Formato de destino
+                    </span>
+
+                    <div class="format-box destination">
+
+                        <strong id="outputFormat">
+                            DOCX
+                        </strong>
+
+                        <span id="outputName">
+                            Word
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button class="convert-button" id="convertButton" type="button" disabled>
+                Convertir archivo
+            </button>
+
+
+            <div class="progress-container" id="progressContainer" hidden>
+
+                <div class="progress-header">
+                    <span>Convirtiendo archivo...</span>
+                    <span id="progressPercent">0%</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+
+            </div>
+
+
+            <div class="result" id="result" hidden>
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+                <div>
+                    <h3>Conversión completada</h3>
+
+                    <p id="resultText">
+                        Tu archivo está listo.
+                    </p>
+                </div>
+
+                <button class="download-button" id="downloadButton" type="button">
+                    Descargar
+                </button>
+
+            </div>
+
+
+            <div class="error" id="error" hidden>
+                <span>!</span>
+                <p id="errorText"></p>
+            </div>
+
+        </section>
+
+
+        <section class="formats">
+
+            <h2>Formatos compatibles</h2>
+
+            <div class="format-grid">
+
+                <div class="format-card">
+                    <div class="format-extension odt">
+                        ODT
+                    </div>
+
+                    <div>
+                        <strong>Writer → Word</strong>
+                        <span>.odt → .docx</span>
+                    </div>
+                </div>
+
+
+                <div class="format-card">
+                    <div class="format-extension ods">
+                        ODS
+                    </div>
+
+                    <div>
+                        <strong>Calc → Excel</strong>
+                        <span>.ods → .xlsx</span>
+                    </div>
+                </div>
+
+
+                <div class="format-card">
+                    <div class="format-extension odp">
+                        ODP
+                    </div>
+
+                    <div>
+                        <strong>Impress → PowerPoint</strong>
+                        <span>.odp → .pptx</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            <p>
+                Office Converter · LibreOffice → Microsoft Office
+            </p>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
